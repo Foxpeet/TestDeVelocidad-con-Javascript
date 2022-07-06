@@ -13,21 +13,22 @@ function EjecutarPrueba(){
     }
 }
 
-function ajustarTiempo(time){
-    let segundos = time/1
-    return (segundos + " sec")
-}
-
 function mostrarResultados() {
     var duration = (endTime - startTime) / 1000; //Math.round()
     var bitsLoaded = downloadSize * 8;
     var speedBps = (bitsLoaded / duration).toFixed(2);
     var speedKbps = (speedBps / 1024).toFixed(2);
     var speedMbps = (speedKbps / 1024).toFixed(2);
-    alert("Tu velocidad de conexion es: \n" +
-        speedBps + " bps\n" +
-        speedKbps + " kbps\n" +
-        speedMbps + " Mbps\n"
-    );
-    console.log(ajustarTiempo(duration))
+    // alert("Tu velocidad de conexion es: \n" +
+    //     speedBps + " bps\n" +
+    //     speedKbps + " kbps\n" +
+    //     speedMbps + " Mbps\n"
+    // );
+    modificarDiv("#resultado-velocidad", speedMbps, "Tu velocidad de conexion es: ", " Mbps")
+    modificarDiv("#resultado-tiempo", duration, "Ha tardado: ", " segundos")
+}
+
+function modificarDiv(selector, parametro, mensajePre, mensajePost){
+    info = document.querySelector(selector)
+    info.textContent = mensajePre + parametro + mensajePost;
 }
