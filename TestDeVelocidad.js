@@ -19,11 +19,6 @@ function mostrarResultados() {
     var speedBps = (bitsLoaded / duration).toFixed(2);
     var speedKbps = (speedBps / 1024).toFixed(2);
     var speedMbps = (speedKbps / 1024).toFixed(2);
-    // alert("Tu velocidad de conexion es: \n" +
-    //     speedBps + " bps\n" +
-    //     speedKbps + " kbps\n" +
-    //     speedMbps + " Mbps\n"
-    // );
     modificarDiv("#resultado-velocidad", speedMbps, "Tu velocidad de conexion es: ", " Mbps")
     modificarDiv("#resultado-tiempo", duration, "Ha tardado: ", " segundos")
 }
